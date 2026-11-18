@@ -1,3 +1,5 @@
+package ru.platonso.weather;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -42,7 +44,7 @@ public class WeatherApplication {
             int currentTemperature = root.get("fact").get("temp").asInt();
             System.out.println("Текущая температура: " + currentTemperature + " °C");
 
-            // cредняя дневная температура за первые limit дней
+            // Средняя дневная температура за первые limit дней.
             int sum = 0;
             for (int i = 0; i < limit; i++) {
                 int dayTemperature = root.get("forecasts").get(i)
